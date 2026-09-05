@@ -1,17 +1,9 @@
-# Cloudshield SDK & Integration Guide
+import requests
 
-Official integration guide and SDK for validating Cloudshield software licenses.
+response = requests.post(
+    '[https://cloudshield-licensing-backend.onrender.com/check-access](https://cloudshield-licensing-backend.onrender.com/check-access)',
+    json={'githubUser': 'YOUR_GITHUB_USERNAME'}
+)
 
-## Quick Start
-
-### 1. Verify User Access (Node.js / JavaScript)
-
-```javascript
-const response = await fetch('[https://cloudshield-licensing-backend.onrender.com/check-access](https://cloudshield-licensing-backend.onrender.com/check-access)', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ githubUser: 'YOUR_GITHUB_USERNAME' })
-});
-
-const data = await response.json();
-console.log(data);
+data = response.json()
+print(data)
